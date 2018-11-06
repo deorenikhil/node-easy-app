@@ -15,14 +15,18 @@ app.use(bodyParser.json())
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
 
+
+url = 'mongodb://'+process.env.MONGODB_PORT_27017_TCP_ADDR +':27017/easy-notes'
+
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
-mongoose.connect(dbConfig.url, {
+mongoose.connect(url, {
     useNewUrlParser: true
 }).then(() => {
     console.log("Successfully connected to the database");    
 }).catch(err => {
+    console.log(url);
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
