@@ -7,7 +7,7 @@ phases:
                 - IMAGE_URI="${REPOSITORY}:${TAG}"
             build:
               commands:
-                - docker build --tag "$IMAGE_URI" .
+                - docker build -t "$IMAGE_URI" .
             post_build:
               commands:
                 - docker push "$IMAGE_URI"
