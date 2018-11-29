@@ -1,5 +1,5 @@
 version: 0.2
-          phases:
+phases:
             pre_build:
               commands:
                 - $(aws ecr get-login --no-include-email)
@@ -12,5 +12,5 @@ version: 0.2
               commands:
                 - docker push "$IMAGE_URI"
                 - printf '[{"name":"simple-app","imageUri":"%s"}]' "$IMAGE_URI" > images.json
-          artifacts:
+            artifacts:
             files: images.json
