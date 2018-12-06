@@ -17,7 +17,7 @@ node {
     }
 
     stage('Push Image AWS ECR'){
-        docker.withRegistry('https://135612535889.dkr.ecr.us-east-1.amazonaws.com/node-easy-app', 'ecr:us-east-1:docker-ecr-credentials') {
+        docker.withRegistry('https://135612535889.dkr.ecr.us-east-1.amazonaws.com/deorenik/node-todo-app', 'ecr:us-east-1:docker-ecr-credentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
