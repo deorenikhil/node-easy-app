@@ -9,10 +9,21 @@ node {
 
     }
 
-    stage('Push Image'){
+    stage('Push Image Dockerhub'){
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
     }
+
+    stage('Push Image AWS ECR'){
+        docker.withRegistry('https://135612535889.dkr.ecr.us-east-1.amazonaws.com/node-easy-app', 'docker-ecr-credentials') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+        }
+    }
+
+
+
+
 }
