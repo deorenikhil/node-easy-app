@@ -23,6 +23,14 @@ node {
         }
     }
 
+    stage('Deploying the Image on AWS ECS') {
+    steps {
+         bash '''#!/bin/bash
+                 echo "hello world" 
+         '''
+    }
+}
+
 
 
 
