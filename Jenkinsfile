@@ -31,8 +31,8 @@ node {
 REGION=us-east-1
 REPOSITORY_NAME=hello-world
 CLUSTER=getting-started
-FAMILY=`hello-world`
-NAME=`hello-world`
+FAMILY=hello-world
+NAME=hello-world
 SERVICE_NAME=${NAME}-service
 echo ${SERVICE_NAME}
 echo ${NAME}
