@@ -25,7 +25,7 @@ node {
 
     stage('Deploying the Image on AWS ECS') {
     
-         bash '''#!/bin/bash
+         sh '''#!/bin/bash
 #Constants
 
 REGION=us-east-1
