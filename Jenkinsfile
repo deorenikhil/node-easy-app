@@ -24,11 +24,11 @@ node {
     }
 
     stage('Deploying the Image on AWS ECS') {
-    steps {
+    
          sh '''#!/bin/bash
                  echo "hello world" 
          '''
-    }
+    
 }
 
 
